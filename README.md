@@ -1,19 +1,18 @@
 # SVG-Intersection-Percent
 Built for AAT Bioquest
+Designed to calculate the percentage overlap between two spectrums (represented by SVG graphics)
 
 ## Usage
 
 ```javascript
-var intersect = require('path-intersection');
+var path0 = "M30 100 L270 20 L300 40 Z";
+var path1 = "M150 200 L160 180 L170 160 L180 140 L190 180 L200 200 Z";
 
-var path0 = 'M30,100L270,20';
-var path1 = 'M150,150m0,-18a18,18,0,1,1,0,36a18,18,0,1,1,0,-36z';
-
-var intersection = intersect(path0, path1);
-// [ { x: ..., y: ..., segment1: ..., segment2: ... }, ... ]
+var percent = intersectionPercentage(path0, path1);
+// percent is a double between 0 and 1
 ```
 
-Results are give as a percentage (out of 100) representing the intersection area divided by total area.
+Results are give as a double representing the intersection area divided by total area.
 
 
 ## Project Dependencies
